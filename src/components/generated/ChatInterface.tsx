@@ -344,6 +344,15 @@ export const ChatInterface = () => {
         borderRadius: "0px 0px 20px 20px"
       }}>
           <div className="max-w-3xl mx-auto relative">
+            <div className="flex gap-3 mb-3">
+              <button className="flex-1 py-2 px-4 text-sm font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors">
+                Play Games
+              </button>
+              <button className="flex-1 py-2 px-4 text-sm font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors">
+                Watch Shorts
+              </button>
+            </div>
+
             <div className="relative group">
               <textarea value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={e => {
               if (e.key === 'Enter' && !e.shiftKey) {

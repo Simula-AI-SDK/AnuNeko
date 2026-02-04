@@ -289,13 +289,13 @@ export const ChatInterface = () => {
 
                   {msg.blocks ? <div className="space-y-3 w-full">
                       {msg.blocks.map((block, bIdx) => <div key={bIdx} className="bg-gray-50 border border-gray-100 rounded-2xl p-4 shadow-sm" style={{
-                  borderTopWidth: "1px",
+                  borderTopWidth: "2px",
                   borderTopColor: "#000000",
-                  borderRightWidth: "1px",
+                  borderRightWidth: "2px",
                   borderRightColor: "#000000",
-                  borderBottomWidth: "1px",
+                  borderBottomWidth: "2px",
                   borderBottomColor: "#000000",
-                  borderLeftWidth: "1px",
+                  borderLeftWidth: "2px",
                   borderLeftColor: "#000000",
                   borderStyle: "solid",
                   borderRadius: "16px"
@@ -304,13 +304,13 @@ export const ChatInterface = () => {
                         </div>)}
                       <ActionButtons />
                     </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-relaxed transition-all ${msg.role === 'user' ? 'bg-[#3d3d3d] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
-                borderTopWidth: "1px",
+                borderTopWidth: "2px",
                 borderTopColor: "#000000",
-                borderRightWidth: "1px",
+                borderRightWidth: "2px",
                 borderRightColor: "#000000",
-                borderBottomWidth: "1px",
+                borderBottomWidth: "2px",
                 borderBottomColor: "#000000",
-                borderLeftWidth: "1px",
+                borderLeftWidth: "2px",
                 borderLeftColor: "#000000",
                 borderStyle: "solid",
                 borderRadius: "16px"
@@ -360,13 +360,13 @@ export const ChatInterface = () => {
                 handleSendMessage();
               }
             }} placeholder="Type your thoughts out here" className="w-full bg-gray-50 border-2 border-transparent focus:border-gray-200 rounded-2xl px-5 pr-16 text-sm resize-none focus:outline-none transition-all h-[48px] shadow-inner flex items-center leading-[48px]" rows={1} style={{
-              borderTopWidth: "1px",
+              borderTopWidth: "2px",
               borderTopColor: "rgb(0, 0, 0)",
-              borderRightWidth: "1px",
+              borderRightWidth: "2px",
               borderRightColor: "rgb(0, 0, 0)",
-              borderBottomWidth: "3px",
+              borderBottomWidth: "2px",
               borderBottomColor: "rgb(0, 0, 0)",
-              borderLeftWidth: "1px",
+              borderLeftWidth: "2px",
               borderLeftColor: "rgb(0, 0, 0)",
               borderStyle: "solid",
               borderRadius: "16px"

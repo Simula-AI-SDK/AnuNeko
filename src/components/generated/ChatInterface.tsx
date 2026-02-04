@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Menu, ChevronDown, Share2, RotateCcw, ThumbsUp, ThumbsDown, Copy, MoreHorizontal, History, X, Plus, MessageSquare, Search, User, ArrowRight, Gamepad2, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MiniGameMenu } from '@simula/ads';
 
 // --- Types ---
 
@@ -22,6 +23,24 @@ interface ChatSession {
 // --- Constants & Helpers ---
 
 const BOT_AVATAR = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%284%29-2nY6Sif9kLevpcGVvmn6pdSIwJCDwa.png";
+
+const chaiGameTheme = {
+  backgroundColor: "rgba(41, 37, 36, 0.98)",
+  headerColor: "rgba(28, 25, 23, 0.95)",
+  borderColor: "rgba(63, 63, 70, 0.4)",
+  titleFont: "Geist, system-ui, sans-serif",
+  secondaryFont: "Geist, system-ui, sans-serif",
+  titleFontColor: "#FAFAF9",
+  secondaryFontColor: "#A8A29E",
+  iconCornerRadius: 12,
+};
+
+const CHARACTER = {
+  name: "AnuNeko",
+  id: "anuneko-001",
+  image: BOT_AVATAR,
+  description: "A creature with a mind of its own! Not your assistant, and definitely not your pet. Just me, with my own thoughts and feelings."
+};
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
 const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
 const CORNER_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%283%29-RwHkT1iGjabTV8fcCuVfD6nCKNbB6o.png";
@@ -79,7 +98,14 @@ export const ChatInterface = () => {
   const [inputValue, setInputValue] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'all' | 'favorites'>('all');
+  const [menuOpen, setMenuOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Convert messages to Simula format
+  const simulaMessages = messages.map(msg => ({
+    role: msg.role as 'user' | 'assistant',
+    content: msg.content
+  }));
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -345,7 +371,9 @@ export const ChatInterface = () => {
       }}>
           <div className="max-w-3xl mx-auto relative">
             <div className="flex gap-3 mb-3">
-              <button className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+              <button 
+                onClick={() => setMenuOpen(true)}
+                className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
                 <Gamepad2 size={14} />
                 Play Games
               </button>
@@ -406,5 +434,18 @@ export const ChatInterface = () => {
         }
       `
     }} />
+
+      <MiniGameMenu
+        isOpen={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        charName={CHARACTER.name}
+        charID={CHARACTER.id}
+        charImage={CHARACTER.image}
+        charDesc={CHARACTER.description}
+        messages={simulaMessages}
+        maxGamesToShow={6}
+        delegateChar={true}
+        theme={chaiGameTheme}
+      />
     </div>;
 };

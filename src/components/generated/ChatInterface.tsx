@@ -364,7 +364,7 @@ export const ChatInterface = () => {
               borderTopColor: "rgb(0, 0, 0)",
               borderRightWidth: "2px",
               borderRightColor: "rgb(0, 0, 0)",
-              borderBottomWidth: "2px",
+              borderBottomWidth: "4px",
               borderBottomColor: "rgb(0, 0, 0)",
               borderLeftWidth: "2px",
               borderLeftColor: "rgb(0, 0, 0)",

@@ -300,10 +300,10 @@ export const ChatInterface = () => {
                   borderStyle: "solid",
                   borderRadius: "16px"
                 }}>
-                          <p className="text-sm leading-relaxed whitespace-pre-wrap">{block}</p>
+                          <p className="text-sm leading-snug whitespace-pre-wrap">{block}</p>
                         </div>)}
                       <ActionButtons />
-                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-relaxed transition-all ${msg.role === 'user' ? 'bg-[#3d3d3d] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
+                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-snug transition-all ${msg.role === 'user' ? 'bg-[#3d3d3d] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
                 borderTopWidth: "2px",
                 borderTopColor: "#000000",
                 borderRightWidth: "2px",

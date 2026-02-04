@@ -371,8 +371,8 @@ export const ChatInterface = () => {
               borderStyle: "solid",
               borderRadius: "16px"
             }} />
-              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className={`absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-xl transition-all ${inputValue.trim() ? 'bg-[#1A1A1A] hover:scale-105 active:scale-95' : 'bg-[#1A1A1A]'}`}>
-                <img src={SEND_ICON} alt="Send" className="w-5 h-5 object-contain invert" />
+              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-xl transition-all hover:scale-105 active:scale-95">
+                <img src={SEND_ICON} alt="Send" className="w-5 h-5 object-contain" />
               </button>
             </div>
             

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Send, Menu, ChevronDown, Share2, RotateCcw, ThumbsUp, ThumbsDown, Copy, MoreHorizontal, History, X, Plus, MessageSquare, Search, User, ArrowRight } from 'lucide-react';
+import { Send, Menu, ChevronDown, Share2, RotateCcw, ThumbsUp, ThumbsDown, Copy, MoreHorizontal, History, X, Plus, MessageSquare, Search, User, ArrowRight, Gamepad2, Play } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Types ---
@@ -21,9 +21,11 @@ interface ChatSession {
 
 // --- Constants & Helpers ---
 
-const BOT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=AnuNeko&backgroundColor=b6e3f4";
+const BOT_AVATAR = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%284%29-2nY6Sif9kLevpcGVvmn6pdSIwJCDwa.png";
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
-const SPARKLE_ICON = "https://images.ctfassets.net/wcv4gvt75lry/8JLzKU9QJ1OjHNJwWBjvC/1017ba5e4e3b9117b75ccc3119fa66dc/image.png";
+const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
+const CORNER_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%283%29-RwHkT1iGjabTV8fcCuVfD6nCKNbB6o.png";
+const SEND_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%282%29-f3CXwbWgwlqlsgEwHBYmcfLEvAz1dk.png";
 
 // Sparkle Icon Component
 const SparkleIcon = ({
@@ -133,7 +135,7 @@ export const ChatInterface = () => {
 
   // @return
   return <div className="flex h-full w-full bg-[#F5F5F5] overflow-hidden font-sans text-[#2D2D2D]" style={{
-    background: "#000000",
+    background: "#3d3d3d",
     borderTopWidth: "0px",
     borderTopColor: "oklch(0.922 0 0)",
     borderRightWidth: "0px",
@@ -223,8 +225,13 @@ export const ChatInterface = () => {
       borderLeftWidth: "0px",
       borderLeftColor: "oklch(0.922 0 0)",
       borderStyle: "solid",
-      borderRadius: "24px"
+      borderRadius: "16px"
     }}>
+        {/* Corner Icons */}
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', left: '8px', transform: 'rotate(0deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', right: '14px', transform: 'rotate(90deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', right: '14px', transform: 'rotate(180deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', left: '8px', transform: 'rotate(270deg)' }} />
         {/* Header */}
         <header className="h-16 flex items-center justify-between px-6 border-b border-gray-100 shrink-0" style={{
         borderTopWidth: "0px",
@@ -269,7 +276,7 @@ export const ChatInterface = () => {
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 scroll-smooth">
           <div className="max-w-3xl mx-auto space-y-10">
             {messages.map((msg, idx) => <div key={msg.id} className={`flex items-start gap-4 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                {msg.role === 'assistant' && <div className="w-10 h-10 rounded-full shrink-0 overflow-hidden border border-gray-100">
+                {msg.role === 'assistant' && <div className="w-10 h-10 rounded-full shrink-0 overflow-hidden border-2 border-black">
                     <img src={BOT_AVATAR} alt="Bot" className="w-full h-full object-cover" />
                   </div>}
                 
@@ -282,28 +289,28 @@ export const ChatInterface = () => {
 
                   {msg.blocks ? <div className="space-y-3 w-full">
                       {msg.blocks.map((block, bIdx) => <div key={bIdx} className="bg-gray-50 border border-gray-100 rounded-2xl p-4 shadow-sm" style={{
-                  borderTopWidth: "1px",
+                  borderTopWidth: "2px",
                   borderTopColor: "#000000",
-                  borderRightWidth: "1px",
+                  borderRightWidth: "2px",
                   borderRightColor: "#000000",
-                  borderBottomWidth: "1px",
+                  borderBottomWidth: "2px",
                   borderBottomColor: "#000000",
-                  borderLeftWidth: "1px",
+                  borderLeftWidth: "2px",
                   borderLeftColor: "#000000",
                   borderStyle: "solid",
                   borderRadius: "16px"
                 }}>
-                          <p className="text-sm leading-relaxed whitespace-pre-wrap">{block}</p>
+                          <p className="text-sm leading-snug whitespace-pre-wrap">{block}</p>
                         </div>)}
                       <ActionButtons />
-                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-relaxed transition-all ${msg.role === 'user' ? 'bg-[#1A1A1A] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
-                borderTopWidth: "1px",
+                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-snug transition-all ${msg.role === 'user' ? 'bg-[#3d3d3d] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
+                borderTopWidth: "2px",
                 borderTopColor: "#000000",
-                borderRightWidth: "1px",
+                borderRightWidth: "2px",
                 borderRightColor: "#000000",
-                borderBottomWidth: "1px",
+                borderBottomWidth: "2px",
                 borderBottomColor: "#000000",
-                borderLeftWidth: "1px",
+                borderLeftWidth: "2px",
                 borderLeftColor: "#000000",
                 borderStyle: "solid",
                 borderRadius: "16px"
@@ -337,12 +344,16 @@ export const ChatInterface = () => {
         borderRadius: "0px 0px 20px 20px"
       }}>
           <div className="max-w-3xl mx-auto relative">
-            <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-              <button onClick={() => scrollRef.current?.scrollTo({
-              top: scrollRef.current.scrollHeight,
-              behavior: 'smooth'
-            })} className="bg-white border border-gray-200 shadow-lg p-2 rounded-full text-gray-400 hover:text-gray-600 hover:scale-110 transition-all active:scale-95">
-                <ChevronDown size={20} />
+            <div className="flex gap-3 mb-3">
+              <button className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                <Gamepad2 size={14} />
+                Play Games
+              </button>
+              <button 
+                onClick={() => window.location.href = 'https://v0-fandom-navigation-recreation.vercel.app/dramas?buddy=orange-cat'}
+                className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                <Play size={14} />
+                Watch Shorts
               </button>
             </div>
 
@@ -352,20 +363,22 @@ export const ChatInterface = () => {
                 e.preventDefault();
                 handleSendMessage();
               }
-            }} placeholder="Type your thoughts out here" className="w-full bg-gray-50 border-2 border-transparent focus:border-gray-200 rounded-2xl px-5 py-4 pr-16 text-sm resize-none focus:outline-none transition-all min-h-[56px] shadow-inner" rows={1} style={{
-              borderTopWidth: "1px",
+            }} placeholder="Type your thoughts out here" className="w-full bg-gray-50 border-2 border-transparent focus:border-gray-200 rounded-2xl px-5 pr-16 text-sm resize-none focus:outline-none transition-all h-[48px] shadow-inner" rows={1} style={{
+              paddingTop: '12px',
+              paddingBottom: '14px',
+              borderTopWidth: "2px",
               borderTopColor: "rgb(0, 0, 0)",
-              borderRightWidth: "1px",
+              borderRightWidth: "2px",
               borderRightColor: "rgb(0, 0, 0)",
-              borderBottomWidth: "3px",
+              borderBottomWidth: "4px",
               borderBottomColor: "rgb(0, 0, 0)",
-              borderLeftWidth: "1px",
+              borderLeftWidth: "2px",
               borderLeftColor: "rgb(0, 0, 0)",
               borderStyle: "solid",
               borderRadius: "16px"
             }} />
-              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className={`absolute right-3 bottom-3 p-2 rounded-xl transition-all ${inputValue.trim() ? 'bg-[#1A1A1A] text-white hover:scale-105 active:scale-95' : 'text-gray-300'}`}>
-                <Send size={20} className="rotate-45" />
+              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-xl transition-all hover:scale-105 active:scale-95">
+                <img src={SEND_ICON} alt="Send" className="w-5 h-5 object-contain" />
               </button>
             </div>
             

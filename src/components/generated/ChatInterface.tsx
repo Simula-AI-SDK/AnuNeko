@@ -25,6 +25,7 @@ const BOT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=AnuNeko&backgro
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
 const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
 const CORNER_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%283%29-RwHkT1iGjabTV8fcCuVfD6nCKNbB6o.png";
+const SEND_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%282%29-f3CXwbWgwlqlsgEwHBYmcfLEvAz1dk.png";
 
 // Sparkle Icon Component
 const SparkleIcon = ({
@@ -370,8 +371,8 @@ export const ChatInterface = () => {
               borderStyle: "solid",
               borderRadius: "16px"
             }} />
-              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className={`absolute right-3 bottom-3 p-2 rounded-xl transition-all ${inputValue.trim() ? 'bg-[#1A1A1A] text-white hover:scale-105 active:scale-95' : 'text-gray-300'}`}>
-                <Send size={20} className="rotate-45" />
+              <button onClick={handleSendMessage} disabled={!inputValue.trim()} className={`absolute right-3 bottom-3 p-2 rounded-xl transition-all ${inputValue.trim() ? 'bg-[#1A1A1A] hover:scale-105 active:scale-95' : 'opacity-30'}`}>
+                <img src={SEND_ICON} alt="Send" className="w-5 h-5 object-contain invert" />
               </button>
             </div>
             

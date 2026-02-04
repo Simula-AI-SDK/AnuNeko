@@ -24,6 +24,7 @@ interface ChatSession {
 const BOT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=AnuNeko&backgroundColor=b6e3f4";
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
 const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
+const CORNER_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%283%29-RwHkT1iGjabTV8fcCuVfD6nCKNbB6o.png";
 
 // Sparkle Icon Component
 const SparkleIcon = ({
@@ -225,6 +226,11 @@ export const ChatInterface = () => {
       borderStyle: "solid",
       borderRadius: "24px"
     }}>
+        {/* Corner Icons */}
+        <img src={CORNER_ICON} alt="" className="absolute top-2 left-2 w-6 h-6 object-contain pointer-events-none" style={{ transform: 'rotate(0deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute top-2 right-2 w-6 h-6 object-contain pointer-events-none" style={{ transform: 'rotate(90deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute bottom-2 right-2 w-6 h-6 object-contain pointer-events-none" style={{ transform: 'rotate(180deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute bottom-2 left-2 w-6 h-6 object-contain pointer-events-none" style={{ transform: 'rotate(270deg)' }} />
         {/* Header */}
         <header className="h-16 flex items-center justify-between px-6 border-b border-gray-100 shrink-0" style={{
         borderTopWidth: "0px",

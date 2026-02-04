@@ -23,7 +23,7 @@ interface ChatSession {
 
 const BOT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=AnuNeko&backgroundColor=b6e3f4";
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
-const SPARKLE_ICON = "https://images.ctfassets.net/wcv4gvt75lry/8JLzKU9QJ1OjHNJwWBjvC/1017ba5e4e3b9117b75ccc3119fa66dc/image.png";
+const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
 
 // Sparkle Icon Component
 const SparkleIcon = ({

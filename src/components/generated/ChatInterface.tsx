@@ -349,7 +349,9 @@ export const ChatInterface = () => {
                 <Gamepad2 size={14} />
                 Play Games
               </button>
-              <button className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+              <button 
+                onClick={() => window.location.href = 'https://v0-fandom-navigation-recreation.vercel.app/dramas?buddy=orange-cat'}
+                className="flex-1 py-2 px-4 text-xs font-medium rounded-xl border-2 border-black hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
                 <Play size={14} />
                 Watch Shorts
               </button>

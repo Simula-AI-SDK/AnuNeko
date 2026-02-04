@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Container, Theme } from './settings/types';
 import { ChatInterface } from './components/generated/ChatInterface';
+import { SimulaProvider } from '@simula/ads';
 
 let theme: Theme = 'light';
 // only use 'centered' container for standalone components, never for full page apps or websites.
@@ -24,15 +25,19 @@ function App() {
 
   if (container === 'centered') {
     return (
-      <div className="h-full w-full flex flex-col items-center justify-center">
-        {generatedComponent}
-      </div>
+      <SimulaProvider apiKey={import.meta.env.VITE_SIMULA_API_KEY || ''}>
+        <div className="h-full w-full flex flex-col items-center justify-center">
+          {generatedComponent}
+        </div>
+      </SimulaProvider>
     );
   } else {
     return (
-      <div className="h-full w-full bg-black p-4">
-        {generatedComponent}
-      </div>
+      <SimulaProvider apiKey={import.meta.env.VITE_SIMULA_API_KEY || ''}>
+        <div className="h-full w-full bg-black p-4">
+          {generatedComponent}
+        </div>
+      </SimulaProvider>
     );
   }
 }

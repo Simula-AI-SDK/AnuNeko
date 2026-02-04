@@ -284,9 +284,8 @@ export const ChatInterface = () => {
           </div>
           
           <div className="flex items-center gap-2">
-            <button className="flex items-center gap-2 px-3 py-1.5 hover:bg-gray-100 rounded-lg transition-colors text-gray-500 text-sm">
+            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-500">
               <Share2 size={16} />
-              <span>Share</span>
             </button>
           </div>
         </header>

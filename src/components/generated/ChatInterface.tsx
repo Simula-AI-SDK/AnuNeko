@@ -21,7 +21,7 @@ interface ChatSession {
 
 // --- Constants & Helpers ---
 
-const BOT_AVATAR = "https://api.dicebear.com/7.x/bottts/svg?seed=AnuNeko&backgroundColor=b6e3f4";
+const BOT_AVATAR = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%284%29-2nY6Sif9kLevpcGVvmn6pdSIwJCDwa.png";
 const USER_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocKWsWYGf2UA0woIZDVzrsn-5RmHNFlKLEStiRDvVESzIawstw=s96-c";
 const SPARKLE_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%281%29-vBlseFRAAddast9VvB167oco4DRmqx.png";
 const CORNER_ICON = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/crown%20%283%29-RwHkT1iGjabTV8fcCuVfD6nCKNbB6o.png";
@@ -276,7 +276,7 @@ export const ChatInterface = () => {
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 scroll-smooth">
           <div className="max-w-3xl mx-auto space-y-10">
             {messages.map((msg, idx) => <div key={msg.id} className={`flex items-start gap-4 ${msg.role === 'user' ? 'justify-end' : ''}`}>
-                {msg.role === 'assistant' && <div className="w-10 h-10 rounded-full shrink-0 overflow-hidden border border-gray-100">
+                {msg.role === 'assistant' && <div className="w-10 h-10 rounded-full shrink-0 overflow-hidden border-2 border-black">
                     <img src={BOT_AVATAR} alt="Bot" className="w-full h-full object-cover" />
                   </div>}
                 

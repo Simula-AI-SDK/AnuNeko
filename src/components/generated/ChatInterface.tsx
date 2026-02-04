@@ -134,7 +134,7 @@ export const ChatInterface = () => {
 
   // @return
   return <div className="flex h-full w-full bg-[#F5F5F5] overflow-hidden font-sans text-[#2D2D2D]" style={{
-    background: "#000000",
+    background: "#3d3d3d",
     borderTopWidth: "0px",
     borderTopColor: "oklch(0.922 0 0)",
     borderRightWidth: "0px",
@@ -228,8 +228,8 @@ export const ChatInterface = () => {
     }}>
         {/* Corner Icons */}
         <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', left: '8px', transform: 'rotate(0deg)' }} />
-        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', right: '8px', transform: 'rotate(90deg)' }} />
-        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', right: '8px', transform: 'rotate(180deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', right: '14px', transform: 'rotate(90deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', right: '14px', transform: 'rotate(180deg)' }} />
         <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', left: '8px', transform: 'rotate(270deg)' }} />
         {/* Header */}
         <header className="h-16 flex items-center justify-between px-6 border-b border-gray-100 shrink-0" style={{
@@ -302,7 +302,7 @@ export const ChatInterface = () => {
                           <p className="text-sm leading-relaxed whitespace-pre-wrap">{block}</p>
                         </div>)}
                       <ActionButtons />
-                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-relaxed transition-all ${msg.role === 'user' ? 'bg-[#1A1A1A] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
+                    </div> : <div className={`rounded-2xl p-4 shadow-sm text-sm leading-relaxed transition-all ${msg.role === 'user' ? 'bg-[#3d3d3d] text-white rounded-tr-none' : 'bg-gray-50 border border-gray-100'}`} style={{
                 borderTopWidth: "1px",
                 borderTopColor: "#000000",
                 borderRightWidth: "1px",

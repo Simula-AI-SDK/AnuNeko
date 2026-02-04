@@ -227,10 +227,10 @@ export const ChatInterface = () => {
       borderRadius: "16px"
     }}>
         {/* Corner Icons */}
-        <img src={CORNER_ICON} alt="" className="absolute top-2 left-2 w-4 h-4 object-contain pointer-events-none" style={{ transform: 'rotate(0deg)' }} />
-        <img src={CORNER_ICON} alt="" className="absolute top-2 right-2 w-4 h-4 object-contain pointer-events-none" style={{ transform: 'rotate(90deg)' }} />
-        <img src={CORNER_ICON} alt="" className="absolute bottom-2 right-2 w-4 h-4 object-contain pointer-events-none" style={{ transform: 'rotate(180deg)' }} />
-        <img src={CORNER_ICON} alt="" className="absolute bottom-2 left-2 w-4 h-4 object-contain pointer-events-none" style={{ transform: 'rotate(270deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', left: '8px', transform: 'rotate(0deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ top: '8px', right: '8px', transform: 'rotate(90deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', right: '8px', transform: 'rotate(180deg)' }} />
+        <img src={CORNER_ICON} alt="" className="absolute w-4 h-4 object-contain pointer-events-none" style={{ bottom: '8px', left: '8px', transform: 'rotate(270deg)' }} />
         {/* Header */}
         <header className="h-16 flex items-center justify-between px-6 border-b border-gray-100 shrink-0" style={{
         borderTopWidth: "0px",

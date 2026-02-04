@@ -359,7 +359,7 @@ export const ChatInterface = () => {
                 e.preventDefault();
                 handleSendMessage();
               }
-            }} placeholder="Type your thoughts out here" className="w-full bg-gray-50 border-2 border-transparent focus:border-gray-200 rounded-2xl px-5 py-4 pr-16 text-sm resize-none focus:outline-none transition-all min-h-[56px] shadow-inner" rows={1} style={{
+            }} placeholder="Type your thoughts out here" className="w-full bg-gray-50 border-2 border-transparent focus:border-gray-200 rounded-2xl px-5 pr-16 text-sm resize-none focus:outline-none transition-all h-[48px] shadow-inner flex items-center leading-[48px]" rows={1} style={{
               borderTopWidth: "1px",
               borderTopColor: "rgb(0, 0, 0)",
               borderRightWidth: "1px",

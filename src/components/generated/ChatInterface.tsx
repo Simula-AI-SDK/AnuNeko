@@ -344,15 +344,6 @@ export const ChatInterface = () => {
         borderRadius: "0px 0px 20px 20px"
       }}>
           <div className="max-w-3xl mx-auto relative">
-            <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-              <button onClick={() => scrollRef.current?.scrollTo({
-              top: scrollRef.current.scrollHeight,
-              behavior: 'smooth'
-            })} className="bg-white border border-gray-200 shadow-lg p-2 rounded-full text-gray-400 hover:text-gray-600 hover:scale-110 transition-all active:scale-95">
-                <ChevronDown size={20} />
-              </button>
-            </div>
-
             <div className="relative group">
               <textarea value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={e => {
               if (e.key === 'Enter' && !e.shiftKey) {
